@@ -16,10 +16,16 @@ class Stack {
   }
 
   pop() {
+    if (this.isEmpty()) {
+      return;
+    }
     return this.stack.pop();
   }
 
-  peekBack() {
+  peek() {
+    if (this.isEmpty()) {
+      return;
+    }
     return this.stack[this.length() - 1];
   }
 }
