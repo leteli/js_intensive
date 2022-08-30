@@ -1,23 +1,32 @@
 class Queue {
   constructor() {
     this.queue = [];
+    this.size = 0;
   }
 
-  size() {
-    return this.queue.length; // O(1)
+  length() {
+    return this.size; // O(1)
   }
 
   isEmpty() {
-    return this.size() === 0; // O(1)
+    return this.size === 0; // O(1)
   }
 
   enqueue(value) {
-    this.queue.push(value); // O(1)
+    const currentIndex = this.size;
+    this.queue[currentIndex] = value;
+    this.size += 1; // O(1)
   }
 
   dequeue() {
     if (!this.isEmpty()) {
-      return this.queue.shift(); // Cложность O(n) - требует новой нумерации индексов с нуля!
+      const firstItem = this.queue[0];
+      this.size -= 1;
+      for (let i = 0; i < this.size; i += 1) { // Cложность O(n) 
+        this.queue[i] = this.queue[i + 1];
+      }
+      this.queue.length -= 1;
+      return firstItem;
     }
   }
 
