@@ -8,57 +8,57 @@ class Calculator {
     if (typeof num1 !== 'number' || isNaN(num1) || typeof num2 !== 'number' || isNaN(num2)) {
       throw new Error('Аргументы должны быть числами');
     }
-    this.x = num1;
-    this.y = num2;
+    this._x = num1;
+    this._y = num2;
   }
 
   getX() {
-    return this.x;
+    return this._x;
   }
 
   getY() {
-    return this.y;
+    return this._y;
   }
 
   setX(num) {
     if (typeof num !== 'number' || isNaN(num)) {
       throw new Error('Аргумент должен быть числом');
     }
-    this.x = num;
+    this._x = num;
   }
 
   setY(num) {
     if (typeof num !== 'number' || isNaN(num)) {
       throw new Error('Аргумент должен быть числом');
     }
-    this.y = num;
+    this._y = num;
   }
 
   logSum() {
-    console.log(this.x + this.y);
+    console.log(this._x + this._y);
   }
 
   logMul() {
-    console.log(this.x * this.y);
+    console.log(this._x * this._y);
   }
 
   logSub() {
-    console.log(this.x - this.y);
+    console.log(this._x - this._y);
   }
 
   logDiv() {
-    if(this.y === 0) {
+    if(this._y === 0) {
       throw new Error('Делитель не может быть нулем');
     }
-    console.log(this.x / this.y);
+    console.log(this._x / this._y);
   }
 
   logDivRest() {
-    console.log(this.x % this.y);
+    console.log(this._x % this._y);
   }
 
   logExp() {
-    console.log(this.x ** this.y);
+    console.log(this._x ** this._y);
   }
 }
 
@@ -71,7 +71,7 @@ class Calculator {
     if (typeof num1 !== 'number' || isNaN(num1) || typeof num2 !== 'number' || isNaN(num2)) {
       throw new Error('Аргументы должны быть числами');
     }
-    this.x = num1;
-    this.y = num2;
+    this._x = num1;
+    this._y = num2;
   }
 */
